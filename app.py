@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 
-st.title("📊 Sales & Revenue Analysis Dashboard")
+st.title(" Sales & Revenue Analysis Dashboard")
 
 
 df = pd.read_csv("sales_data.csv")
@@ -50,7 +50,7 @@ col3.metric("Total Orders", total_orders)
 st.markdown("---")
 
 
-st.subheader("📈 Revenue Trend")
+st.subheader("Revenue Trend")
 
 sales_trend = filtered_df.groupby("Date")["Sales"].sum().reset_index()
 
@@ -64,7 +64,7 @@ fig1 = px.line(
 
 st.plotly_chart(fig1, use_container_width=True)
 
-st.subheader("🏆 Top Performing Products")
+st.subheader(" Top Performing Products")
 
 top_products = (
     filtered_df.groupby("Product")["Sales"]
@@ -84,7 +84,7 @@ fig2 = px.bar(
 st.plotly_chart(fig2, use_container_width=True)
 
 
-st.subheader("🧩 Category-wise Sales")
+st.subheader(" Category-wise Sales")
 
 category_sales = (
     filtered_df.groupby("Category")["Sales"]
@@ -102,6 +102,6 @@ fig3 = px.pie(
 st.plotly_chart(fig3, use_container_width=True)
 
 
-st.subheader("📄 Sales Data")
+st.subheader("Sales Data")
 
 st.dataframe(filtered_df)
